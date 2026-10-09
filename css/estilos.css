@@ -1,43 +1,115 @@
 * {
-    margin: 0; 
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body { 
+body {
     min-height: 100vh;
     background-image: linear-gradient(-45deg, #e3ddd9 50%, #36221c 50%);
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagina-principal {
+    width: min(1100px, 90vw);
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+.encabezado {
+    margin-bottom: 1.5rem;
 }
 
 .titulo {
-    font-size: 40px;
+    font-size: clamp(2.4rem, 4vw, 4rem);
     font-family: 'Dancing Script', cursive;
-    margin-bottom: 40px;
     color: #fff;
-}
-
-.subtitulo {
     margin: 0;
-    color: #000;
-    display: inline;
-    font-size: 50px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.sabor { 
-    color: #fff;
-    margin: 7px 0;
-    font-size: 50px;
-    font-weight: 600;
-    text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
-    font-family: 'Dancing Script', cursive;
-    margin-top: 0;
+    letter-spacing: 1px;
 }
 
 .linea-division {
     width: 80%;
     height: 2px;
-    background-color: #36221c;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 1rem auto 0;
+}
+
+.carousel {
+    margin-top: 1.5rem;
+    height: 560px!important;
+}
+
+.carousel .carousel-item {
+    width: 430px;
+    height: 460px;
+    opacity: 1 !important;
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+}
+
+.carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.1) contrast(1.05);
+}
+
+.info-item {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.5rem 1.2rem 1.1rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12));
+    color: #fff;
+    text-align: left;
+}
+
+.subtitulo {
+    margin: 0;
+    color: #fff;
+    display: block;
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sabor {
+    color: #fff;
+    margin: 0.35rem 0 0;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+    font-weight: 600;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+    font-family: 'Dancing Script', cursive;
+}
+
+.carousel .indicators {
+    bottom: -22px;
+}
+
+.carousel .indicator-item {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel .indicator-item.active {
+    background-color: #fff;
+}
+
+@media (max-width: 700px) {
+    .carousel .carousel-item {
+        width: 300px;
+        height: 390px;
+    }
+
+    .pagina-principal {
+        padding-top: 2rem;
+    }
 }
